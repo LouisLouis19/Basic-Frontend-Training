@@ -42,10 +42,17 @@
 
       const calculateFactorial = (number) => {
         // TASK: CREATE YOUR FACTORIAL CALCULATION LOGIC HERE
+      
+        let factorial = 1;
+        for (let i = 1; i <= number; i++) {
+          factorial *= i;
+        }
+        return factorial;
+
       };
 
       calculateButton.addEventListener("click", () => {
-        const inputValue = parseInt(numberInput.value);
+        const inputValue = parseInt(numberInput.value); //parseInt(): convert whatever input into Int 
 
         if (!isNaN(inputValue)) {
           const factorialResult = calculateFactorial(inputValue);
