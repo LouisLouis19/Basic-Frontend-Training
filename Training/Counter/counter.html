@@ -26,14 +26,19 @@
     <h1>Click Counter</h1>
     <button id="clickButton">Click me!</button>
     <p id="counter">Click count: 0</p>
+    <img src="ceobe.gif">
 
     <script>
       // JavaScript functionality
       const clickButton = document.getElementById("clickButton");
       const counter = document.getElementById("counter");
+      const myVideo = document.getElementById("video1"); 
+
+      let count = 0;
 
       clickButton.addEventListener("click", () => {
-        // counter.textContent = `Click count: ${}`;
+        count += 1;
+        counter.textContent = `Click count: ${count}`;
       });
     </script>
   </body>
