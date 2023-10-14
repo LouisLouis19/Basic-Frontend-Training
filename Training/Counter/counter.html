@@ -26,14 +26,22 @@
     <h1>Click Counter</h1>
     <button id="clickButton">Click me!</button>
     <p id="counter">Click count: 0</p>
+    <button id="resetButton">reset!</button>
 
     <script>
       // JavaScript functionality
       const clickButton = document.getElementById("clickButton");
+      const resetButton = document.getElementById("resetButton");
       const counter = document.getElementById("counter");
+      let count = 0;
 
       clickButton.addEventListener("click", () => {
-        // counter.textContent = `Click count: ${}`;
+        count += 1;
+        counter.textContent = `Click count: ${count}`;
+      });
+      resetButton.addEventListener("click", () => {
+        count = 0;
+        counter.textContent = `Click count: ${count}`;
       });
     </script>
   </body>
