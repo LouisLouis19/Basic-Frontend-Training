@@ -1,59 +1,123 @@
-<!-- A web page with an input field and a button to calculate the factorial of a number entered by the user -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factorial Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      input[type="number"] {
-        padding: 10px;
-        font-size: 16px;
-      }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(45deg, #6C5B7B, #C06C84, #F67280);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+        }
 
-      #calculateButton {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-      }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            width: 80%;
+            max-width: 550px;
+            position: relative;
+            z-index: 2;
+        }
 
-      #result {
-        font-size: 24px;
-        margin-top: 20px;
-      }
+        h1 {
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-size: 28px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        input[type="number"]::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        #calculateButton {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            outline: none;
+        }
+
+        #calculateButton:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        #result {
+            font-size: 26px;
+            margin-top: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
     </style>
-  </head>
-  <body>
-    <h1>Factorial Calculator</h1>
-    <input type="number" id="numberInput" placeholder="Enter a number" />
-    <button id="calculateButton">Calculate Factorial</button>
-    <p id="result">Factorial:</p>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Factorial Magic</h1>
+        <input type="number" id="numberInput" placeholder="Cast a number spell..." />
+        <button id="calculateButton">Reveal the Magic!</button>
+        <p id="result">Magic Result:</p>
+    </div>
 
     <script>
-      // JavaScript functionality
-      const numberInput = document.getElementById("numberInput");
-      const calculateButton = document.getElementById("calculateButton");
-      const result = document.getElementById("result");
+        // JavaScript functionality
+        const numberInput = document.getElementById("numberInput");
+        const calculateButton = document.getElementById("calculateButton");
+        const result = document.getElementById("result");
 
-      const calculateFactorial = (number) => {
-        // TASK: CREATE YOUR FACTORIAL CALCULATION LOGIC HERE
-      };
+        const calculateFactorial = (number) => {
+            if (number < 0) return "Magic can't be negative!"; 
+            if (number === 0) return 1;
+            if (number === 1) return 1;
+            return calculateFactorial(number - 1) * number;
+        };
 
-      calculateButton.addEventListener("click", () => {
-        const inputValue = parseInt(numberInput.value);
+        calculateButton.addEventListener("click", () => {
+            const inputValue = parseInt(numberInput.value);
 
-        if (!isNaN(inputValue)) {
-          const factorialResult = calculateFactorial(inputValue);
-          result.textContent = `Factorial: ${factorialResult}`;
-        } else {
-          result.textContent = "Factorial: Invalid input";
-        }
-      });
+            if (!isNaN(inputValue)) {
+                const factorialResult = calculateFactorial(inputValue);
+                if (typeof factorialResult === "string") {
+                    result.textContent = `Magic Result: ${factorialResult}`;
+                } else {
+                    result.textContent = `Magic Result: ${factorialResult.toLocaleString()}`;
+                }
+            } else {
+                result.textContent = "Magic Result: Invalid spell...";
+            }
+        });
     </script>
-  </body>
+</body>
+
 </html>
