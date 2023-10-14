@@ -1,5 +1,3 @@
-<!-- PRACTICE QUESTION 1 -->
-<!-- CREATE CONTAINER AND CENTRALIZE THE ELEMENTS -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,40 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Element Placement Practice</title>
     <style>
-      /* Your CSS rules for element placement go here */
       body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        /* TASK 1: PLACE THE ITEMS IN THE CENTRE OF THE WEBPAGE */
-        /* margin: ;
-        padding: ;
-        display: ;
-        justify-content: ;
-        align-items: ;
-        height: ; */
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        background-color: #FAFAFA;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #333; /* dark gray */
       }
 
       .container {
-        background-color: #fff;
-        padding: 20px;
-        /* TASK 2: CREATE YOUR OWN CURVED BORDER */
-        /* border: ;
-        border-radius: ; */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        max-width: 600px; /* restrict width for better readability */
+        background-color: #FFF;
+        padding: 40px 60px; /* increased padding for more whitespace */
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* subtle shadow for depth */
       }
 
       h1 {
         text-align: center;
+        font-weight: 300; /* Lighter weight for modern typography */
+        margin-bottom: 20px; /* space between header and content */
       }
+
+      p {
+        font-size: 18px; /* slightly bigger font for better readability */
+        line-height: 1.6; /* better line-height for readability */
+        margin-bottom: 20px;
+      }
+
+      button {
+        display: block; /* make button block-level for full-width */
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 16px;
+        border: none;
+        background-color: #333; /* same color as the text */
+        color: #FFF;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s; /* smooth transition for hover effect */
+      }
+
+      button:hover {
+        background-color: #555; /* slightly lighter color on hover */
+      }
+
     </style>
   </head>
   <body>
     <div class="container">
       <h1>Welcome to Our Website</h1>
-      <p>
-        This is a simple example for practicing element placement and layout.
-        You can add more content here.
-      </p>
+      <p>This is a simple example for practicing element placement and layout. You can add more content here.</p>
       <button>Learn More</button>
     </div>
   </body>
