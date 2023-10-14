@@ -42,6 +42,11 @@
 
       const calculateFactorial = (number) => {
         // TASK: CREATE YOUR FACTORIAL CALCULATION LOGIC HERE
+        let factorial = 1;
+        for (let i = number; i > 0; i -= 1) {
+          factorial *= i;
+        }
+        return factorial;
       };
 
       calculateButton.addEventListener("click", () => {
