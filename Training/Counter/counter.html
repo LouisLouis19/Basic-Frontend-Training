@@ -31,9 +31,10 @@
       // JavaScript functionality
       const clickButton = document.getElementById("clickButton");
       const counter = document.getElementById("counter");
-
+      let cnt = 0;
       clickButton.addEventListener("click", () => {
-        // counter.textContent = `Click count: ${}`;
+        counter.textContent = `Click count: ${cnt}`;
+        cnt++;
       });
     </script>
   </body>

@@ -41,7 +41,12 @@
       const result = document.getElementById("result");
 
       const calculateFactorial = (number) => {
-        // TASK: CREATE YOUR FACTORIAL CALCULATION LOGIC HERE
+        if (number < 0) return "cant lol";
+        let x = 1;
+        for (let i = 1; i <= number; i++) {
+          x *= i;
+        }
+        return x;
       };
 
       calculateButton.addEventListener("click", () => {
