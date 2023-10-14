@@ -41,13 +41,17 @@
       const result = document.getElementById("result");
 
       const calculateFactorial = (number) => {
-        // TASK: CREATE YOUR FACTORIAL CALCULATION LOGIC HERE
+        if (number == 0 || number == 1) {
+          return 1;
+        } else {
+          return number * calculateFactorial(number - 1);
+        }
       };
 
       calculateButton.addEventListener("click", () => {
         const inputValue = parseInt(numberInput.value);
 
-        if (!isNaN(inputValue)) {
+        if (!isNaN(inputValue) || inputValue > 0) {
           const factorialResult = calculateFactorial(inputValue);
           result.textContent = `Factorial: ${factorialResult}`;
         } else {
