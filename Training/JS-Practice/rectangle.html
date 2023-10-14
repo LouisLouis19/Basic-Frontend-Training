@@ -1,0 +1,62 @@
+<!-- A web page with input fields and a button to calculate the rectangle size given the dimensions entered by the user -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rectangle Area Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      input[type="number"] {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      #calculateButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #result {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rectangle Area Calculator</h1>
+    <input type="number" id="lengthInput" placeholder="Enter length" />
+    <input type="number" id="widthInput" placeholder="Enter width" />
+    <button id="calculateButton">Calculate Area</button>
+    <p id="result">Area:</p>
+
+    <script>
+      // JavaScript functionality
+      const lengthInput = document.getElementById("lengthInput");
+      const widthInput = document.getElementById("widthInput");
+      const calculateButton = document.getElementById("calculateButton");
+      const result = document.getElementById("result");
+
+      const calculateRectangleArea = (length, width) => {
+        // TASK: CREATE YOUR AREA CALCULATION LOGIC HERE
+      };
+
+      calculateButton.addEventListener("click", () => {
+        const length = parseFloat(lengthInput.value);
+        const width = parseFloat(widthInput.value);
+
+        if (!isNaN(length) && !isNaN(width)) {
+          const area = calculateRectangleArea(length, width);
+          result.textContent = `Area: ${area}`;
+        } else {
+          result.textContent = "Area: Invalid input";
+        }
+      });
+    </script>
+  </body>
+</html>

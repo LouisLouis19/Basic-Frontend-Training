@@ -1,0 +1,59 @@
+<!-- A web page with an input field and a button to calculate the factorial of a number entered by the user -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      input[type="number"] {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      #calculateButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #result {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Factorial Calculator</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number" />
+    <button id="calculateButton">Calculate Factorial</button>
+    <p id="result">Factorial:</p>
+
+    <script>
+      // JavaScript functionality
+      const numberInput = document.getElementById("numberInput");
+      const calculateButton = document.getElementById("calculateButton");
+      const result = document.getElementById("result");
+
+      const calculateFactorial = (number) => {
+        // TASK: CREATE YOUR FACTORIAL CALCULATION LOGIC HERE
+      };
+
+      calculateButton.addEventListener("click", () => {
+        const inputValue = parseInt(numberInput.value);
+
+        if (!isNaN(inputValue)) {
+          const factorialResult = calculateFactorial(inputValue);
+          result.textContent = `Factorial: ${factorialResult}`;
+        } else {
+          result.textContent = "Factorial: Invalid input";
+        }
+      });
+    </script>
+  </body>
+</html>
